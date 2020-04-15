@@ -1,0 +1,26 @@
+<div class="brands">
+  <a href="#">
+    <img src="assets/img/instacart.png">
+    <img src="assets/img/kickstarter.png">
+    <img src="assets/img/lyft.png">
+    <img src="assets/img/shopify.png">
+    <img src="assets/img/pinterest.png">
+    <img src="assets/img/twitter.png">
+  </a>
+</div>
+<!--
+<div class="carousel slide" data-ride="carousel" id="carousel-1">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active"><img class="w-100 d-block" alt="Slide Image" style="background-color: #fff;" src="assets/img/ibclub.png" height="100px"></div>
+        <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"></div>
+        <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"></div>
+    </div>
+    <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev" style="padding-top: 90px;"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1"
+            role="button" data-slide="next" style="padding-top: 90px;"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-1" data-slide-to="1"></li>
+        <li data-target="#carousel-1" data-slide-to="2"></li>
+    </ol>
+</div>
+-->
