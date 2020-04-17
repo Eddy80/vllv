@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',  function () {
     return view('home');
 });
 
-Route::get('/home', function () {
-    return view('welcome');
-});
 
 Route::get('/library', function () {
     return view('lib');
@@ -49,3 +46,8 @@ Route::get('register', function() {
     return view('welcome');
 })->name('register');
 */
+
+Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
