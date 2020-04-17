@@ -32,10 +32,10 @@
                 </div>
 
                 <div class="form-group">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                 <label class="form-check-label" for="remember">
-                    {{-- {{ __('Remember Me') }} --}}Yadda saxla
+                  Yadda saxla  {{-- {{ __('Remember Me') }} --}}
                 </label>
                 </div>
 
@@ -52,7 +52,7 @@
                       email və ya parolu unutmusuz?  {{-- {{ __('Forgot Your Password?') }} --}}
                     </a>
                 @endif
-                
+
             </form>
   </div>
 
