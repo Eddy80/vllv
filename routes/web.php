@@ -30,12 +30,14 @@ Route::get('/packets', function () {
     return view('packetssection');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
 
-Route::get('/reg', function () {
-    return view('reg');
+
+Route::get('/logout','Auth\LoginController@logout');
+
+
+
+Route::get('/cab', function () {
+    return view('cab');
 });
 /*
 Route::get('login', function() {
@@ -48,6 +50,6 @@ Route::get('register', function() {
 */
 
 Auth::routes();
-// Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('/home', 'HomeController@index')->name('home');

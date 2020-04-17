@@ -9,11 +9,14 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <h2 class="sr-only">Kabinetə giriş</h2>
-                <div class="illustration"><i class="icon ion-ios-navigate" style="color: #FF6A00;"></i></div>
+                <div class="illustration">
+                  <img src="assets/img/logo.png">
+                  {{-- <i class="icon ion-ios-navigate" style="color: #FF6A00;"></i> --}}
+                </div>
                 <div class="form-group">
                   {{-- <input class="form-control" type="email" name="email" placeholder="Email"> --}}
                   {{-- {{ __('Password') }} --}}
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                  <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   @error('email')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -23,7 +26,7 @@
                 <div class="form-group">
                   {{-- <input class="form-control" type="password" name="password" placeholder="Parol"> --}}
                   {{-- {{ __('E-Mail Address') }} --}}
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                  <input placeholder="Parol" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   @error('password')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>

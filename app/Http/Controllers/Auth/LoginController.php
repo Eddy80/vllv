@@ -6,6 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use App\Lesson;
+use App\Lessonvideo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Uservideos;
+
 class LoginController extends Controller
 {
     /*
@@ -40,6 +47,8 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+      //dd($request);
+
         $this->validate($request,[
             'email'=>'required|email',
             'password'=>'required'
@@ -49,12 +58,16 @@ class LoginController extends Controller
             ->where('password',md5($request->get('password')))
             ->first();
 
+      //  dd($user);
+
         if ($user){
             Auth::login($user);
-            return redirect('/cab');
+            //return redirect('/cab');
 
-            /*
+
             $currentuser = Auth::user();
+            //return dd($currentuser);
+/*
             $uservideos = Vluservideos::where('userid', $currentuser->id)->groupby('catid')->get('catid');
 
             $arrayresult = [];
@@ -65,8 +78,8 @@ class LoginController extends Controller
                 $countofuservideosbylesson = Vluservideos::where('userid', $currentuser->id)->where('catid', $uservideo->catid)->count();
                 $percent = round($countofuservideosbylesson*100/$countofvideosinlessons);
                 array_push($arrayresult, array($uservideo->catid, $lessonname[0], $lessonduration[0], $percent));
-            }
-            return view('cab', ['arrayresult'=>$arrayresult,  'currentuser'=>$currentuser]);*/
+            }*/
+            return view('cab', [/*'arrayresult'=>$arrayresult, */ 'currentuser'=>$currentuser]);
         }
         return redirect()->back()->with('status','Yalnış email və ya parol');
     }
