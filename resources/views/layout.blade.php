@@ -60,11 +60,11 @@
                 </ul>
                 <span class="navbar-text actions">
                   @if (!Auth::check())
-                  <a class="login" href="/login" style="color: #ffffff;font-size: 18px;">GİRİŞ</a>
+                  <a class="login" href="{{ route('login') }}" style="color: #ffffff;font-size: 18px;">GİRİŞ</a>
                   <a class="btn btn-light action-button" role="button" href="/packets" style="background-color: #ff7e00;font-size: 18px;">ÜZV OL</a>
                   @else
                     <div class="dropdown">
-                      <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="/assets/img/user.png"></a>
+                      <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="assets/img/user.png" style="background-color: #fff;" /></a>
                         <div class="dropdown-menu" role="menu" style="background-color: red;color:red;">
                           <a class="dropdown-item" role="presentation" href="lessons"><strong>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</strong></a>
                           <a class="dropdown-item" role="presentation" href="/cab"><strong>Profilim</strong></a>

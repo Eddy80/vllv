@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
-{{--
-@if (  (Auth::user()->payamount==0) && (Auth::user()->payexpiredate< date('Y-m-d') ) )
-  @include('packets.php');
-@endif --}}
+
+@if (  (Auth::user()->payamount==0) || (Auth::user()->payexpiredate< date('Y-m-d') ) )
+  @include('packets');
+@endif
 
   <div style="background-color: #fff;padding-top: 30px;">
       <div class="container">

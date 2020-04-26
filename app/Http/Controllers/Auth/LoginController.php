@@ -79,7 +79,9 @@ class LoginController extends Controller
                 $percent = round($countofuservideosbylesson*100/$countofvideosinlessons);
                 array_push($arrayresult, array($uservideo->catid, $lessonname[0], $lessonduration[0], $percent));
             }*/
-            return view('cab', [/*'arrayresult'=>$arrayresult, */ 'currentuser'=>$currentuser]);
+          //  return view('cab')->with([/*'arrayresult'=>$arrayresult, */ 'currentuser'=>$currentuser]);
+              return view('cab');//->with('currentuser'=>$currentuser);
+
         }
         return redirect()->back()->with('status','Yalnış email və ya parol');
     }

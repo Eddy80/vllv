@@ -39,17 +39,23 @@ Route::get('/logout','Auth\LoginController@logout');
 Route::get('/cab', function () {
     return view('cab');
 });
-/*
+
+Route::get('/exam', function () {
+    return view('exam');
+});
+
 Route::get('login', function() {
-    return view('login');
+    return view('auth.login');
 })->name('login');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::get('register', function() {
     return view('welcome');
 })->name('register');
-*/
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/home', 'HomeController@index')->name('home');
