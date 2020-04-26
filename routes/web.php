@@ -51,9 +51,10 @@ Route::get('login', function() {
 Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::get('register', function() {
-    return view('welcome');
+    return view('auth.register');
 })->name('register');
 
+Route::post('register', 'Auth\RegisterController@create')->name('register');
 
 // Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -41,13 +41,16 @@ class User extends Authenticatable
 
     public static function add($fields)
     {
+      if ($fields['password']==$fields['password_confirm']){
         $user = new static;
         $user->fill($fields);
        // $user->password = bcrypt($fields['password']);
+
         $user->password = md5($fields['password']);
         $user->save();
 
         return $user;
+      }
     }
 
 

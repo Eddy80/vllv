@@ -23,7 +23,7 @@
                     <div class="form-group">
                       {{-- {{ __('Password') }}
                       <input class="form-control" type="password" name="password" placeholder="Parol"> --}}
-                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                      <input placeholder="Parol" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                       @error('password')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -33,12 +33,12 @@
                     <div class="form-group">
                       {{-- {{ __('Confirm Password') }}
                       <input class="form-control" type="password" name="password-repeat" placeholder="Parol (təkrar)"> --}}
-                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                      <input placeholder="Parol (təkrar)" id="password_confirm" type="password" class="form-control" name="password_confirm" required >
                     </div>
                     <div class="form-group">
                       {{-- {{ __('Name') }} --}}
                       {{-- <input class="form-control" type="text" name="firstname" placeholder="Adınız"> --}}
-                      <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                      <input placeholder="Adınız" id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
 
                       @error('firstname')
                           <span class="invalid-feedback" role="alert">
@@ -49,9 +49,9 @@
                     <div class="form-group">
                       {{-- {{ __('Name') }} --}}
                       {{-- <input class="form-control" type="text" name="lastname" placeholder="Soydınız"> --}}
-                      <input id="lastname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="lastname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                      <input id="lastname" placeholder="Soyadınız" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
 
-                      @error('firstname')
+                      @error('lastname')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -65,7 +65,7 @@
                         Qeydiyyat{{--  {{ __('Register') }} --}}
                       </button>
                   </div>
-                    <a class="already" href="login">Artıq qeydiyyatınız var? Kabinetə daxil olun</a></form>
+                    <a class="already" href="{{Route('login') }}">Artıq qeydiyyatınız var? Kabinetə daxil olun</a></form>
             </div>
         </div>
 

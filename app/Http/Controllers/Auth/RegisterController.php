@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class RegisterController extends Controller
 {
     /*
@@ -79,8 +82,10 @@ class RegisterController extends Controller
     */
 
 
-    protected function create(Request $request)  //array $data
+    public function create(Request $request)  //array $data
     {
+      //dd($request);
+
         $validator =  $this->validate($request,[
             'firstname'=> 'required|min:2',
             'lastname'=> 'required|min:2',
