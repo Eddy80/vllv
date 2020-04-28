@@ -28,10 +28,13 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css" media="screen"/>
+
 </head>
 
 <body style="background-color: #e6e6e6;">
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: #000000;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-image: linear-gradient(153.43deg, black 65%, white 35%);">
         <div class="container">
           <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
@@ -58,10 +61,10 @@
                       <a class="nav-link" data-bs-hover-animate="pulse" href="library" style="color: #ffffff;font-size: 18px;">KİTABXANA</a>
                     </li>
                 </ul>
-                <span class="navbar-text actions">
+                <span class="navbar-text actions" style="padding-top:20px;">
                   @if (!Auth::check())
-                  <a class="login" href="{{ route('login') }}" style="color: #ffffff;font-size: 18px;">GİRİŞ</a>
-                  <a class="btn btn-light action-button" role="button" href="/packets" style="background-color: #ff7e00;font-size: 18px;">ÜZV OL</a>
+                  <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="color:#000000; background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 20px;">GİRİŞ</a>
+                  <a class="btn btn-light action-button" role="button" href="/packets" style="background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 20px;">ÜZV OL</a>
                   @else
                     <div class="dropdown">
                       <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="assets/img/user.png" style="background-color: #fff;" /></a>
@@ -74,7 +77,8 @@
                           <a class="dropdown-item" role="presentation" href="certificates"><strong>Sertifikatlarım</strong></a>
                         </div>
                         &nbsp;
-                        <a class="login" href="/logout" style="color: #ffffff;font-size: 18px;">ÇIXIŞ</a>
+                       <a class="btn btn-light action-button" role="button" href="/logout" style="background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 25px">ÇIXIŞ</a>
+
                     </div>
 
                     @endif

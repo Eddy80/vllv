@@ -1,0 +1,21 @@
+.playlist li {
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 30px;
+  padding: 0.2rem 0.8rem;
+  width: 100%;
+  list-style: none;
+  cursor: pointer;
+  background-color: #E6E6E6;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: 1px 2px #fff;
+     -moz-box-shadow: 1px 2px #fff;
+          box-shadow: 1px 2px #fff;
+  }
+
+  .playlist li:hover{
+
+    background-color: #FF7E00;
+
+    }
