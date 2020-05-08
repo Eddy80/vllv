@@ -34,10 +34,15 @@ Route::get('/packets', function () {
 Route::get('/lessons', function () {
     return view('lessons');
 });
-
+/*
 Route::get('/lesson', function () {
     return view('lesson');
 });
+*/
+Route::get('/lesson/{lessonid}', 'LessonController@lessonload');
+
+
+
 
 
 //Route::get('/lesson/{lessonid}', 'VlcatController@lessonload');

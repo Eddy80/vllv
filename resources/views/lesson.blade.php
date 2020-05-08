@@ -19,7 +19,7 @@
       <div class="container">
           <div class="row">
               <div class="col-md-8" style="background-color: #000;padding: 20px 20px 20px 20px;padding-top: 18px;">
-                <video controls="" style="background-color: red;" width="100%" height="108%"></video>
+                <video controls="" style="background-color: #FF7E00;" width="100%" height="108%"></video>
               </div>
               <div class="col-md-4" style="background-color: #000;padding: 20px 20px 20px 20px;">
                   <div class="card" style="height:108%">

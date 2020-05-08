@@ -15,7 +15,14 @@
   }
 
   .playlist li:hover{
+  background-color: #FF7E00;
+  }
 
-    background-color: #FF7E00;
 
-    }
+.dropdown a{
+    text-decoration: none;
+  }
+
+.dropdown a :hover{
+  color: #FF7E00;
+}

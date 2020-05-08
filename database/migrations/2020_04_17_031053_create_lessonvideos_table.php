@@ -14,7 +14,16 @@ class CreateLessonvideosTable extends Migration
     public function up()
     {
         Schema::create('lessonvideos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->integer('lessonid');
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->text('text')->nullable();
+            $table->integer('durationinseconds')->nullable();
+            $table->integer('viewcount')->default(0);
+            $table->text('filename')->nullable();
+            $table->string('preview')->nullable();
+            $table->smallInteger('payed')->default(0);
             $table->timestamps();
         });
     }

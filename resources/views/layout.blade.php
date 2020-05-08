@@ -34,7 +34,7 @@
 </head>
 
 <body style="background-color: #e6e6e6;">
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-image: linear-gradient(153.43deg, black 65%, white 35%);">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-image: linear-gradient(140.00deg, black 60%, white 40%);">
         <div class="container">
           <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
@@ -43,8 +43,8 @@
           <img src="assets/img/logo.png">
             <div class="collapse navbar-collapse" id="navcol-1" style="margin-top: -20px;margin-left: 40px;">
                 <div class="dropdown">
-                  <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;">TƏLİMLƏR</a>
-                    <div class="dropdown-menu" role="menu" style="background-color: red;color:red;">
+                  <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false"  href="#" style="color: #ffffff;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif; margin-left: 20px;">TƏLİMLƏR</a>
+                    <div class="dropdown-menu" role="menu" style="background-color: #FF7E00;color:#FF7E00;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif;">
                       <a class="dropdown-item" role="presentation" href="lessons"><strong>PSİXOLOGİYA</strong></a>
                       <a class="dropdown-item" role="presentation" href="couch"><strong>KOUÇ</strong></a>
                       <a class="dropdown-item" role="presentation" href="#"><strong>NLP >>></strong></a>
@@ -55,10 +55,13 @@
                       <a>&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link" data-bs-hover-animate="pulse" href="/experts" style="color: #ffffff;font-size: 18px;">EKSPERTLƏR</a>
+                      <a class="nav-link" data-bs-hover-animate="pulse" href="/experts" style="color: #ffffff;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif;">EKSPERTLƏR</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link" data-bs-hover-animate="pulse" href="library" style="color: #ffffff;font-size: 18px;">KİTABXANA</a>
+                      <a class="nav-link" data-bs-hover-animate="pulse" href="/library" style="color: #ffffff;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif;">KİTABXANA</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" data-bs-hover-animate="pulse" href="/exams" style="color: #ffffff;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif;">SINAQLAR</a>
                     </li>
                 </ul>
                 <span class="navbar-text actions" style="padding-top:20px;">
@@ -68,7 +71,7 @@
                   @else
                     <div class="dropdown">
                       <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="assets/img/user.png" style="background-color: #fff;" /></a>
-                        <div class="dropdown-menu" role="menu" style="background-color: red;color:red;">
+                        <div class="dropdown-menu" role="menu" style="background-color: #FF7E00;color:#FF7E00;">
                           <a class="dropdown-item" role="presentation" href="lessons"><strong>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</strong></a>
                           <a class="dropdown-item" role="presentation" href="/cab"><strong>Profilim</strong></a>
                           <a class="dropdown-item" role="presentation" href="/mypayaccount"><strong>Hesabım</strong></a>
@@ -117,9 +120,9 @@
                         <div class="col-sm-4 col-md-3 item">
                             <ul></ul>
                         </div>
-                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
                             <p
-                                class="copyright">CİBS © 2020</p>
+                                class="copyright">CIBS © 2020</p>
                         </div>
                     </div>
                 </div>
