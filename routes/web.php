@@ -30,7 +30,6 @@ Route::get('/packets', function () {
     return view('packetssection');
 });
 
-
 Route::get('/lessons', function () {
     return view('lessons');
 });
@@ -41,17 +40,7 @@ Route::get('/lesson', function () {
 */
 Route::get('/lesson/{lessonid}', 'LessonController@lessonload');
 
-
-
-
-
-//Route::get('/lesson/{lessonid}', 'VlcatController@lessonload');
-
-
-
 Route::get('/logout','Auth\LoginController@logout');
-
-
 
 Route::get('/cab', function () {
     return view('cab');

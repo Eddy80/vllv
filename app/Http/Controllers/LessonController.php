@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lesson;
+use App\Lessonvideo;
 use Auth;
 
 class LessonController extends Controller
@@ -25,9 +26,9 @@ class LessonController extends Controller
     public function lessonload($lessonid)
     {
         $lesson = Lesson::find($lessonid);
-        $videos = LessonVideo::where('catid', $lessonid)->get();
+        $videos = Lessonvideo::where('lessonid', $lessonid)->get();
         $user = Auth::user();
-      //    return view('lesson');
+        //return view('lesson');
         return view('lesson', ['lesson'=>$lesson, 'videos'=>$videos, 'currentuser'=>$user]);
     }
 }
