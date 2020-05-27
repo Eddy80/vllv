@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Packet;
 
 class RegisterController extends Controller
 {
@@ -81,6 +82,19 @@ class RegisterController extends Controller
     }
     */
 
+
+  public function packets()  //array $data
+  {
+      $packets = Packet::All();
+      return view('packetssection')->with(['packets'=>$packets]);
+  }
+
+
+  public function register(Request $request)  //array $data
+  {
+      $packets = Packet::All();
+      return view('auth.register')->with(['packets'=>$packets, 'packetid'=>$request->packetid]);
+  }
 
     public function create(Request $request)  //array $data
     {

@@ -46,6 +46,10 @@ class CreateUsersTable extends Migration
           $table->double('payamountbypromokod')->nullable();
           $table->integer('status')->default(0);
 
+          $table->integer('usertype')->default(0);
+          $table->integer('userparent')->default(-1);
+          $table->string('company')->nullable();
+
           $table->rememberToken();
           $table->timestamps();
         });

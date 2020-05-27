@@ -42,6 +42,9 @@
   background: #f7f9fc;
   border: none;
   border-bottom: 1px solid #dfe7f1;
+  border-top: 1px solid #dfe7f1;
+  border-left: 1px solid #dfe7f1;
+  border-right: 1px solid #dfe7f1;
   border-radius: 0;
   box-shadow: none;
   outline: none;

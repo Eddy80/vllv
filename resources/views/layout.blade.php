@@ -40,14 +40,14 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon" style="background-color: #efdcdc;"></span>
           </button>
-          <img src="/assets/img/logo.png">
+          <a href="{{ Route('home') }}"><img src="/assets/img/logo.png" ></a>
             <div class="collapse navbar-collapse" id="navcol-1" style="margin-top: -20px;margin-left: 40px;">
                 <div class="dropdown">
                   <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false"  href="#" style="color: #ffffff;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif; margin-left: 20px;">TƏLİMLƏR</a>
                     <div class="dropdown-menu" role="menu" style="background-color: #FF7E00;color:#FF7E00;font-size: 18px;font-family: Tahoma, Helvetica, Arial, sans-serif;">
-                      <a class="dropdown-item" role="presentation" href="lessons"><strong>PSİXOLOGİYA</strong></a>
-                      <a class="dropdown-item" role="presentation" href="couch"><strong>KOUÇ</strong></a>
-                      <a class="dropdown-item" role="presentation" href="#"><strong>NLP >>></strong></a>
+                      <a class="dropdown-item" role="presentation" href="{{Route('lessons') }}"><strong>PSİXOLOGİYA</strong></a>
+                      <a class="dropdown-item" role="presentation" href="{{Route('couch') }}"><strong>KOUÇ</strong></a>
+                      <a class="dropdown-item" role="presentation" href="{{Route('nlp') }}"><strong>NLP >>></strong></a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav mr-auto">
@@ -66,18 +66,18 @@
                 </ul>
                 <span class="navbar-text actions" style="padding-top:20px;">
                   @if (!Auth::check())
-                  <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="color:#000000; background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 20px;">GİRİŞ</a>
+                  <a class="btn btn-light action-button" role="button" href="{{ Route('login') }}" style="color:#000000; background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 20px;">GİRİŞ</a>
                   <a class="btn btn-light action-button" role="button" href="/packets" style="background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 20px;">ÜZV OL</a>
                   @else
                     <div class="dropdown">
-                      <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="assets/img/user.png" style="background-color: #fff;" /></a>
+                      <a class="dropdown-toggle mainmenu" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="color: #ffffff;font-size: 18px;margin-left: 20px;"><img src="/assets/img/user.png" style="background-color: #fff;" /></a>
                         <div class="dropdown-menu" role="menu" style="background-color: #FF7E00;color:#FF7E00;">
-                          <a class="dropdown-item" role="presentation" href="lessons"><strong>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</strong></a>
+                          <a class="dropdown-item" role="presentation" href="{{Route('lessons') }}"><strong>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</strong></a>
                           <a class="dropdown-item" role="presentation" href="/cab"><strong>Profilim</strong></a>
                           <a class="dropdown-item" role="presentation" href="/mypayaccount"><strong>Hesabım</strong></a>
                           <a class="dropdown-item" role="presentation" href="/changepassword"><strong>Parolu dəyiş</strong></a>
-                          <a class="dropdown-item" role="presentation" href="cab"><strong>Videolarım</strong></a>
-                          <a class="dropdown-item" role="presentation" href="certificates"><strong>Sertifikatlarım</strong></a>
+                          <a class="dropdown-item" role="presentation" href="/cab"><strong>Videolarım</strong></a>
+                          <a class="dropdown-item" role="presentation" href="/certificates"><strong>Sertifikatlarım</strong></a>
                         </div>
                         &nbsp;
                        <a class="btn btn-light action-button" role="button" href="/logout" style="background-color: #ff7e00;font-weight: bold;font-size: 18px;padding:5px 25px">ÇIXIŞ</a>
@@ -101,12 +101,12 @@
                         <div class="col-sm-4 col-md-3 item">
                             <h3>Xidmətlər</h3>
                             <ul>
-                                <li><a href="#">Ana səhifə</a></li>
-                                <li><a href="#">Haqqımızda</a></li>
-                                <li><a href="#">Təlimlər</a></li>
-                                <li><a href="#">Ekspertlər</a></li>
-                                <li><a href="#">Rəylər</a></li>
-                                <li><a href="#">Partnyorlar</a></li>
+                                <li><a href="{{Route('home') }}">Ana səhifə</a></li>
+                                <li><a href="{{Route('about') }}">Haqqımızda</a></li>
+                                <li><a href="{{Route('lessons') }}">Təlimlər</a></li>
+                                <li><a href="{{Route('experts') }}">Ekspertlər</a></li>
+                                <li><a href="{{Route('comments') }}">Rəylər</a></li>
+                                <li><a href="{{Route('partners') }}">Partnyorlar</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
@@ -128,14 +128,14 @@
                 </div>
             </footer>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-        <script src="assets/js/Simple-Slider.js"></script>
-        <script src="assets/js/my.js"></script>
+        <script src="/assets/js/Simple-Slider.js"></script>
+        <script src="/assets/js/my.js"></script>
 
 
 </body>
