@@ -42,9 +42,9 @@
       <div class="article-list" style="background-color: #E6E6E6;">
           <div class="container" style="background-color: #E6E6E6;">
               <div class="d-inline intro">
-                  <h2 class="text-center d-inline-block" style="padding-top: 27px;color: #FF7E00;">Yeni</h2>
+                  <a href="javascript:new_popular(0);"><h2 id="yeni" class="text-center d-inline-block" style="padding-top: 27px;color: #FF7E00;font-size: 26px;">Yeni</h2></a>
                   <h2 class="text-center d-inline-block" style="padding-top: 27px;color: #7a7774;font-size: 26px;">&nbsp;|&nbsp;</h2>
-                  <a href="javascript:document.getElementById('new').style.display= 'none';"><h2 class="text-center d-inline-block" style="padding-top: 27px;color: #7a7774;font-size: 26px;">Populyar</h2></a>
+                  <a href="javascript:new_popular(1);"><h2 id="pop" class="text-center d-inline-block" style="padding-top: 27px;color: #7a7774;font-size: 26px;">Populyar</h2></a>
               </div>
               <div class="row articles" style="padding-bottom: 0px;" id="new">
                 @foreach ($lessonsnew as $lessonnew)
@@ -79,7 +79,7 @@
       <div class="highlight-blue" style="background-color: #E6E6E6;height: 64px;padding: 1px;">
           <div class="container">
               <div class="intro"></div>
-              <div class="buttons" style="margin-top: -20px;"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF7E00;color: #fff;margin-top: 0px;">DAHA ÇOX</a></div>
+              <div class="buttons" style="margin-top: -20px;"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="{{ Route('lessons') }}" style="background-color: #FF7E00;color: #fff;margin-top: 0px;">DAHA ÇOX</a></div>
           </div>
       </div>
       @include('partners')

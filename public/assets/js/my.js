@@ -57,7 +57,32 @@ $( document ).ready(function() {
       document.getElementById('videoarea').addEventListener('ended',myHandler,false);
       alert(8);
 
+
+      // $("h2").on("click", function() {
+      //         $('#popular').css("display", "block");
+      //         $('#new').css("display", "none");
+      // }
+
+
+
 });
+
+function new_popular(key) {
+  //alert(key);
+  if (key==0) {
+    $('#popular').css("display", "none");
+    $('#new').css("display", "");
+    $('#yeni').css("color", "#FF7E00");
+    $('#pop').css("color", "#7a7774");
+  }
+  else {
+    $('#popular').css("display", "");
+    $('#new').css("display", "none");
+    $('#yeni').css("color", "#7a7774");
+    $('#pop').css("color", "#FF7E00");
+  }
+}
+
 
 function myHandler(e) {
     // What you want to do after the event
