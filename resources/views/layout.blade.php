@@ -88,8 +88,9 @@
                 </span>
             </div>
         </div>
-    </nav>
 
+    </nav>
+  <div class="horizontalorangeline"></div>
 
     @yield('content' )
 

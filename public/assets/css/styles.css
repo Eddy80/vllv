@@ -26,3 +26,50 @@
 .dropdown a :hover{
   color: #FF7E00;
 }
+
+
+.brands .itemspartner img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.brands .itemspay img {
+  width: 150px;
+  height: auto;
+  margin-right: 40px;
+}
+
+.brands h4 {
+  padding-top: 40px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.brands .itemspartner {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.brands .itemspay {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.exp {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.lessonname {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  height: 70px;"
+}
+
+.horizontalorangeline{
+  padding: 3px;
+  background-color: #FF6A00;
+}

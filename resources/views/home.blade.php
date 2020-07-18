@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="simple-slider">
+    <div class="simple-slider">
           <div class="swiper-container">
               <div class="swiper-wrapper">
                   <div data-aos="slide-left" data-aos-duration="50" class="swiper-slide" style="background-image: url(&quot;assets/img/gizli.jpg&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;background-color: #000;"></div>
@@ -14,6 +14,9 @@
               <div class="swiper-button-next"></div>
           </div>
       </div>
+      <div class="horizontalorangeline"></div>
+
+
       <div class="features-boxed" style="background-color: #ffffff;">
           <div class="container">
               <div class="intro"></div>
@@ -39,6 +42,8 @@
               </div>
           </div>
       </div>
+      <div class="horizontalorangeline"></div>
+
       <div class="article-list" style="background-color: #E6E6E6;">
           <div class="container" style="background-color: #E6E6E6;">
               <div class="d-inline intro">
@@ -65,7 +70,7 @@
                   <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse"><a href="#"></a>
                       <div style="padding: 12px;background-color: #fff;padding-bottom: 35px;"><img class="img-fluid" src="assets/img/building.jpg" style="margin-top: 0;">
                           <h6 class="text-left">Expert: Təbriz Hacınski</h6>
-                          <h3 class="text-left name" style="font-size: 20px;margin-top: 11px;margin-bottom: 10px;height: 70px;">{{ $lessonpopular->name }}</h3><a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF7E00;color: #fff;padding: 6px;padding-bottom: 2px;font-size: 12px;padding-top: 2px;"><strong>BAXMAQ</strong></a>
+                          <h3 class="text-left name" style="font-size: 20px;margin-top: 11px;margin-bottom: 10px;height: 70px;">{{ $lessonpopular->name }}</h3><a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF7E00;color: #fff;padding: 8px;padding-bottom: 4px;font-size: 14px;padding-top: 4px;"><strong>BAXMAQ</strong></a>
                           <strong
                               class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start" style="padding: 0px 0px 0px 20px;font-size: 14px;">13:05:22</strong>
                       </div>
@@ -78,26 +83,27 @@
       </div>
       <div class="highlight-blue" style="background-color: #E6E6E6;height: 64px;padding: 1px;">
           <div class="container">
-              <div class="intro"></div>
               <div class="buttons" style="margin-top: -20px;"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="{{ Route('lessons') }}" style="background-color: #FF7E00;color: #fff;margin-top: 0px;">DAHA ÇOX</a></div>
+
           </div>
       </div>
+      <div class="horizontalorangeline"></div>
       @include('partners')
       @include('comments')
-      @include('partners')
+      @include('paymethods')
       @include('packets')
 
 
       <div class="highlight-blue" style="background-color: #fff;">
             <div class="container">
                 <div class="intro">
-                    <h2 class="text-center" style="color: #000;font-size: 23px;"><strong>Bütün video dərslərə limitsiz baxmaq icazəsi</strong><br></h2>
+                    <h4 class="text-center" style="color: #000;"><strong>Bütün video dərslərə limitsiz baxmaq icazəsi</strong><br></h2>
                     <p class="text-center">Videoline - da yer alan 150+ video və 400+ dəqiqə dərslərə limitsiz icazə əldə etmək üçün indi<br></p>
                 </div>
                 <div class="buttons"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF6A00;color: #fff;font-size: 20px;">ÜZV OL</a></div>
             </div>
         </div>
-
+        <div class="horizontalorangeline"></div>
 {{--
 <div class="container">
     <div class="row justify-content-center">

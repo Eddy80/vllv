@@ -1,8 +1,8 @@
 <div class="photo-gallery" style="background-color: #E6E6E6;">
     <div class="container" style="background-color: #E6E6E6;">
         <div class="intro">
-            <p>&nbsp;</p>
-            <h3 class="text-center"><strong>Paketini seç və öyrənməyə başla</strong></h3>
+            <p>&nbsp;</p><p>&nbsp;</p>
+            <h4 class="text-center"><strong>Paketini seç və öyrənməyə başla</strong></h4>
             <p class="text-center">Videoline'da yer alan 150+ video və 400+ dəqiqə dərslərə baxmaq üçün özünə uyğun olan paketi seç<br></p>
         </div>
     </div>
@@ -34,3 +34,4 @@
         </div>
     </div>
 </div>
+<div class="horizontalorangeline"></div>

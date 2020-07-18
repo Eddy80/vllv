@@ -22,8 +22,10 @@ class LessonController extends Controller
     {
         $lessons = Lesson::All();
         $user = Auth::user();
+
+        $experts = Expert::All();
         //$expert = Expert::where('id', $lessonid->authorid)->get();
-        return view('lessons', ['lessons'=>$lessons,  'currentuser'=>$user]);
+        return view('lessons', ['lessons'=>$lessons, 'experts'=>$experts, 'currentuser'=>$user]);
 
         //return  $lessons;
     }
