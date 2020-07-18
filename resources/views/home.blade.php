@@ -5,9 +5,9 @@
     <div class="simple-slider">
           <div class="swiper-container">
               <div class="swiper-wrapper">
-                  <div data-aos="slide-left" data-aos-duration="50" class="swiper-slide" style="background-image: url(&quot;assets/img/gizli.jpg&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;background-color: #000;"></div>
-                  <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
-                  <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
+                @foreach ($manshets as $manshet)
+                  <div data-aos="slide-left" data-aos-duration="50" class="swiper-slide" style="background-image: url('assets/img/manshet/{{ $manshet->image}}');background-size: contain;background-repeat: no-repeat;background-position: center;background-color: #000;"></div>
+                @endforeach
               </div>
               <div class="swiper-pagination"></div>
               <div class="swiper-button-prev"></div>
@@ -137,7 +137,7 @@
                     <h4 class="text-center" style="color: #000;"><strong>Bütün video dərslərə limitsiz baxmaq icazəsi</strong><br></h2>
                     <p class="text-center">Videoline - da yer alan 150+ video və 400+ dəqiqə dərslərə limitsiz icazə əldə etmək üçün indi<br></p>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF6A00;color: #fff;font-size: 20px;box-shadow: 2px 2px gray;">ÜZV OL</a></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="/packets" style="background-color: #FF6A00;color: #fff;font-size: 20px;box-shadow: 2px 2px gray;">ÜZV OL</a></div>
             </div>
         </div>
         <div class="horizontalorangeline"></div>

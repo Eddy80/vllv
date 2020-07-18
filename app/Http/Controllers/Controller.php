@@ -11,6 +11,7 @@ use App\Packet;
 use App\Lesson;
 use App\Expert;
 use App\Comment;
+use App\Manshet;
 
 class Controller extends BaseController
 {
@@ -24,6 +25,7 @@ class Controller extends BaseController
         $lessonspopular = Lesson::orderBy('totalviewcount', 'desc')->take(3)->get();
         $experts = Expert::All();
         $comments = Comment::All();
-        return view('home')->with(['packets'=>$packets, 'comments'=>$comments, 'experts'=>$experts, 'lessonsnew'=>$lessonsnew, 'lessonspopular'=>$lessonspopular]);
+        $manshets = Manshet::All();
+        return view('home')->with(['packets'=>$packets, 'manshets'=>$manshets, 'comments'=>$comments, 'experts'=>$experts, 'lessonsnew'=>$lessonsnew, 'lessonspopular'=>$lessonspopular]);
     }
 }
