@@ -70,7 +70,7 @@
 }
 
 .horizontalorangeline{
-  padding: 2px;
+  padding: 1px;
   background-color: #FF6A00;
 }
 
@@ -78,14 +78,13 @@
 .itemlesson{
   margin-top: 30px;
   padding-bottom: 0px;
-  display:none;
 }
 
 .itemlesson .itemlessoninside {
   box-shadow: 3px 3px gray;
   padding: 12px;
   background-color: #fff;
-  padding-bottom: 35px;
+  padding-bottom: 40px;
 }
 
 .itemlesson .itemlessoninside .duration {
@@ -98,16 +97,16 @@
   font-size: 20px;
   margin-top: 11px;
   margin-bottom: 10px;
-  height: 70px;
+  height: 50px;
 }
 
 .itemlesson a, .itemlesson a:hover {
   background-color: #FF7E00;
   color: #fff;
-  padding: 8px;
-  padding-bottom: 4px;
-  font-size: 14px;
-  padding-top: 4px;
+  padding: 0px 8px 4px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 2px 2px gray;
 }
 
 #new {

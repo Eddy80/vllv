@@ -53,6 +53,19 @@
               </div>
               <div class="row articles itemlesson"  id="new">
                 @foreach ($lessonsnew as $lessonnew)
+
+                  @php
+                  $totalHour =   floor($lessonnew->totaldurationinseconds/3600);
+                  $totalMinute = floor(abs($lessonnew->totaldurationinseconds-$totalHour*3600)/60);
+                  $totalSecond = floor(abs($lessonnew->totaldurationinseconds-$totalHour*3600)%60);
+
+                  if ( strlen($totalHour)==1)  $totalHour= "0".$totalHour;
+                  if ( strlen($totalMinute)==1)  $totalMinute= "0".$totalMinute;
+                  if ( strlen($totalSecond)==1)  $totalSecond= "0".$totalSecond;
+
+                  $totalFormat = $totalHour.":".$totalMinute.":".$totalSecond;
+                  @endphp
+
                   @foreach($experts as $expert)
                     @if($expert->id == $lessonnew->authorid)
                       @php $currentexpert = $expert->firstname.' '.$expert->lastname; @endphp
@@ -63,8 +76,8 @@
                           <img class="img-fluid" src="assets/vl_videos/cat{{ $lessonnew->id }}/preview.jpg" style="margin-top: 0;">
                           <h6 class="text-left exp"><strong>Expert:</strong> {{ $currentexpert }}</h6>
                           <h3 class="text-left lessonname">{{ $lessonnew->name }}</h3>
-                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#"><strong>BAXMAQ</strong></a>
-                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">13:05:22</strong>
+                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="/lesson/{{ $lessonnew->id }}" style=" box-shadow: 2px 2px gray;"><strong>BAXMAQ</strong></a>
+                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">{{ $totalFormat }}</strong>
                       </div>
                       <p class="description"></p>
                       <em style="margin-left: 80px;"></em>
@@ -73,6 +86,19 @@
               </div>
               <div class="row articles itemlesson" id="popular">
                 @foreach ($lessonspopular as $lessonpopular)
+
+                  @php
+                  $totalHour =   floor($lessonpopular->totaldurationinseconds/3600);
+                  $totalMinute = floor(abs($lessonpopular->totaldurationinseconds-$totalHour*3600)/60);
+                  $totalSecond = floor(abs($lessonpopular->totaldurationinseconds-$totalHour*3600)%60);
+
+                  if ( strlen($totalHour)==1)  $totalHour= "0".$totalHour;
+                  if ( strlen($totalMinute)==1)  $totalMinute= "0".$totalMinute;
+                  if ( strlen($totalSecond)==1)  $totalSecond= "0".$totalSecond;
+
+                  $totalFormat = $totalHour.":".$totalMinute.":".$totalSecond;
+                  @endphp
+
                   @foreach($experts as $expert)
                     @if($expert->id == $lessonpopular->authorid)
                       @php $currentexpert = $expert->firstname.' '.$expert->lastname; @endphp
@@ -83,8 +109,8 @@
                           <img class="img-fluid" src="assets/vl_videos/cat{{ $lessonpopular->id }}/preview.jpg" style="margin-top: 0;">
                           <h6 class="text-left exp"><strong>Expert:</strong> {{ $currentexpert }}</h6>
                           <h3 class="text-left lessonname">{{ $lessonpopular->name }}</h3>
-                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#"><strong>BAXMAQ</strong></a>
-                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">13:05:22</strong>
+                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="/lesson/{{ $lessonpopular->id }}">BAXMAQ</a>
+                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">{{ $totalFormat }}</strong>
                       </div>
                       <p class="description"></p>
                       <em style="margin-left: 80px;"></em>
@@ -95,8 +121,7 @@
       </div>
       <div class="highlight-blue" style="background-color: #E6E6E6;height: 64px;padding: 1px;">
           <div class="container">
-              <div class="buttons" style="margin-top: -20px;"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="{{ Route('lessons') }}" style="background-color: #FF7E00;color: #fff;margin-top: 0px;">DAHA ÇOX</a></div>
-
+              <div class="buttons " style="margin-top: -30px;"><a class="btn btn-primary" role="button mybtn" data-bs-hover-animate="pulse" href="{{ Route('lessons') }}" style="background-color: #FF7E00;color: #fff;margin-top: 0px;  font-size: 20px; box-shadow: 2px 2px gray;">DAHA ÇOX</a></div>
           </div>
       </div>
       <div class="horizontalorangeline"></div>
@@ -112,7 +137,7 @@
                     <h4 class="text-center" style="color: #000;"><strong>Bütün video dərslərə limitsiz baxmaq icazəsi</strong><br></h2>
                     <p class="text-center">Videoline - da yer alan 150+ video və 400+ dəqiqə dərslərə limitsiz icazə əldə etmək üçün indi<br></p>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF6A00;color: #fff;font-size: 20px;">ÜZV OL</a></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF6A00;color: #fff;font-size: 20px;box-shadow: 2px 2px gray;">ÜZV OL</a></div>
             </div>
         </div>
         <div class="horizontalorangeline"></div>

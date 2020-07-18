@@ -13,7 +13,7 @@
         <div class="row">
             @foreach ($packets as $packet)
               <div class="col-md-3 text-center" style="background-color: transparent;padding-bottom: 10px;background-position: bottom;width: 272px;">
-                  <div class="text-center bg-white border rounded border-danger" data-bs-hover-animate="pulse" style="box-shadow: 3px 3px #FF6A00; background-color: #fff;margin-top: 10px;padding: 10px;"><img class="img-fluid" src="assets/img/{{$packet->img}}" style="background-color: #fff;" width="250p">
+                  <div class="text-center bg-white border rounded border-danger" data-bs-hover-animate="pulse" style="box-shadow: 2px 2px #FF6A00; background-color: #fff;margin-top: 10px;padding: 10px;"><img class="img-fluid" src="assets/img/{{$packet->img}}" style="background-color: #fff;" width="250p">
                       <h1 class="text-center" style="color: #FF6A00;font-size: 25px;background-color: #fff;margin-bottom: 0;margin-top: 30px;"><strong>{{ $packet->name }}</strong><br></h1>
                       <h1 class="text-center" style="color: #000;font-size: 20px;background-color: #fff;margin-top: 10px;"><strong>{{$packet->price}} AZN</strong></h1>
                       <h1 class="text-center" style="color: #FF6A00;font-size: 20px;margin-top: 10px;">

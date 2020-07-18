@@ -10,7 +10,7 @@
               <h4 class="text-center d-inline-block" style="padding-top: 37px;color: #7a7774;">CIBS</h4>
               <p>&nbsp;</p>
           </div>
-          <div class="row articles" style="padding-bottom: 0px;">
+          <div class="row articles itemlesson">
 
             @foreach($lessons as $lesson)
               @php
@@ -30,18 +30,16 @@
                   @php $currentexpert = $expert->firstname.' '.$expert->lastname; @endphp
                 @endif
               @endforeach
-              <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse"><a href="#"></a>
-                  <div style="padding: 12px;background-color: #fff;padding-bottom: 35px;">
+              <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse">
+                  <div class="itemlessoninside">
                       <img class="img-fluid" src="assets/vl_videos/cat{{ $lesson->id }}/preview.jpg" style="margin-top: 0;">
                       <h6 class="text-left exp" ><strong>Expert:</strong> {{ $currentexpert }}</h6>
                       <h3 class="text-left lessonname" >{{ $lesson->name }}</h3>
-                      <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="/lesson/{{ $lesson->id }}" style="background-color: #FF7E00;color: #fff;padding: 6px;padding-bottom: 2px;font-size: 12px;padding-top: 2px;">
-                        <strong>BAXMAQ</strong>
-                      </a>
-                      <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start"
-                      style="padding: 0px 0px 0px 20px;font-size: 14px;">{{ $totalFormat }}</strong>
+                      <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="/lesson/{{ $lesson->id }}">BAXMAQ</a>
+                      <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">{{ $totalFormat }}</strong>
                   </div>
-                  <p class="description"></p><a class="action" href="#"></a><em style="margin-left: 80px;"></em>
+                  <p class="description"></p>
+                  <em style="margin-left: 80px;"></em>
               </div>
             @endforeach
           </div>
