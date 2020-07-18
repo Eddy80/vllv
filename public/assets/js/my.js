@@ -71,12 +71,12 @@ function new_popular(key) {
   //alert(key);
   if (key==0) {
     $('#popular').css("display", "none");
-    $('#new').css("display", "");
+    $('#new').css("display", "flex");
     $('#yeni').css("color", "#FF7E00");
     $('#pop').css("color", "#7a7774");
   }
   else {
-    $('#popular').css("display", "");
+    $('#popular').css("display", "flex");
     $('#new').css("display", "none");
     $('#yeni').css("color", "#7a7774");
     $('#pop').css("color", "#FF7E00");

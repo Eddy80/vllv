@@ -47,34 +47,46 @@
       <div class="article-list" style="background-color: #E6E6E6;">
           <div class="container" style="background-color: #E6E6E6;">
               <div class="d-inline intro">
-                  <a href="javascript:new_popular(0);"><h2 id="yeni" class="text-center d-inline-block" style="padding-top: 27px;color: #FF7E00;font-size: 26px;">Yeni</h2></a>
-                  <h2 class="text-center d-inline-block" style="padding-top: 27px;color: #7a7774;font-size: 26px;">&nbsp;|&nbsp;</h2>
-                  <a href="javascript:new_popular(1);"><h2 id="pop" class="text-center d-inline-block" style="padding-top: 27px;color: #7a7774;font-size: 26px;">Populyar</h2></a>
+                <a href="javascript:new_popular(0);"><h4  id="yeni" class="text-center d-inline-block" style="padding-top: 37px;color: #FF7E00;">Yeni</h4></a>
+                <h4 class="text-center d-inline-block" style="padding-top: 37px;color: #7a7774;">&nbsp;|&nbsp;</h4>
+                <a href="javascript:new_popular(1);"><h4 id="pop" class="text-center d-inline-block" style="padding-top: 37px;color: #7a7774;">Populyar</h4></a>
               </div>
-              <div class="row articles" style="padding-bottom: 0px;" id="new">
+              <div class="row articles itemlesson"  id="new">
                 @foreach ($lessonsnew as $lessonnew)
-                  <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse"><a href="#"></a>
-                      <div style="padding: 12px;background-color: #fff;padding-bottom: 35px;"><img class="img-fluid" src="assets/img/building.jpg" style="margin-top: 0;">
-                          <h6 class="text-left">Expert: Təbriz Hacınski</h6>
-                          <h3 class="text-left name" style="font-size: 20px;margin-top: 11px;margin-bottom: 10px;height: 70px;">{{ $lessonnew->name }}</h3><a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF7E00;color: #fff;padding: 6px;padding-bottom: 2px;font-size: 12px;padding-top: 2px;"><strong>BAXMAQ</strong></a>
-                          <strong
-                              class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start" style="padding: 0px 0px 0px 20px;font-size: 14px;">13:05:22</strong>
+                  @foreach($experts as $expert)
+                    @if($expert->id == $lessonnew->authorid)
+                      @php $currentexpert = $expert->firstname.' '.$expert->lastname; @endphp
+                    @endif
+                  @endforeach
+                  <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse">
+                      <div class="itemlessoninside">
+                          <img class="img-fluid" src="assets/vl_videos/cat{{ $lessonnew->id }}/preview.jpg" style="margin-top: 0;">
+                          <h6 class="text-left exp"><strong>Expert:</strong> {{ $currentexpert }}</h6>
+                          <h3 class="text-left lessonname">{{ $lessonnew->name }}</h3>
+                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#"><strong>BAXMAQ</strong></a>
+                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">13:05:22</strong>
                       </div>
-                      <p class="description"></p><a class="action" href="#"></a>
+                      <p class="description"></p>
                       <em style="margin-left: 80px;"></em>
                     </div>
                 @endforeach
               </div>
-              <div class="row articles" style="padding-bottom: 0px; display:none;" id="popular">
+              <div class="row articles itemlesson" id="popular">
                 @foreach ($lessonspopular as $lessonpopular)
-                  <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse"><a href="#"></a>
-                      <div style="padding: 12px;background-color: #fff;padding-bottom: 35px;"><img class="img-fluid" src="assets/img/building.jpg" style="margin-top: 0;">
-                          <h6 class="text-left">Expert: Təbriz Hacınski</h6>
-                          <h3 class="text-left name" style="font-size: 20px;margin-top: 11px;margin-bottom: 10px;height: 70px;">{{ $lessonpopular->name }}</h3><a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#" style="background-color: #FF7E00;color: #fff;padding: 8px;padding-bottom: 4px;font-size: 14px;padding-top: 4px;"><strong>BAXMAQ</strong></a>
-                          <strong
-                              class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start" style="padding: 0px 0px 0px 20px;font-size: 14px;">13:05:22</strong>
+                  @foreach($experts as $expert)
+                    @if($expert->id == $lessonpopular->authorid)
+                      @php $currentexpert = $expert->firstname.' '.$expert->lastname; @endphp
+                    @endif
+                  @endforeach
+                  <div class="col-sm-6 col-md-4 m-auto item" data-bs-hover-animate="pulse">
+                      <div class="itemlessoninside">
+                          <img class="img-fluid" src="assets/vl_videos/cat{{ $lessonpopular->id }}/preview.jpg" style="margin-top: 0;">
+                          <h6 class="text-left exp"><strong>Expert:</strong> {{ $currentexpert }}</h6>
+                          <h3 class="text-left lessonname">{{ $lessonpopular->name }}</h3>
+                          <a class="btn btn-primary text-left d-inline-block float-left d-xl-flex justify-content-xl-start" role="button" data-bs-hover-animate="pulse" href="#"><strong>BAXMAQ</strong></a>
+                          <strong class="text-dark d-inline-block float-right d-xl-flex justify-content-xl-start duration">13:05:22</strong>
                       </div>
-                      <p class="description"></p><a class="action" href="#"></a>
+                      <p class="description"></p>
                       <em style="margin-left: 80px;"></em>
                     </div>
                 @endforeach

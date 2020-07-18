@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 use App\Packet;
 use App\Lesson;
+use App\Expert;
 
 class Controller extends BaseController
 {
@@ -19,7 +20,8 @@ class Controller extends BaseController
     {
         $packets = Packet::All();
         $lessonsnew = Lesson::orderBy('id', 'desc')->take(3)->get();
-        $lessonspopular = Lesson::orderBy('totalviewcount', 'desc')->take(3)->get(); 
-        return view('home')->with(['packets'=>$packets, 'lessonsnew'=>$lessonsnew, 'lessonspopular'=>$lessonspopular]);
+        $lessonspopular = Lesson::orderBy('totalviewcount', 'desc')->take(3)->get();
+        $experts = Expert::All();
+        return view('home')->with(['packets'=>$packets,'experts'=>$experts, 'lessonsnew'=>$lessonsnew, 'lessonspopular'=>$lessonspopular]);
     }
 }
