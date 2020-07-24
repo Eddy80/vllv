@@ -57,19 +57,21 @@ Route::get('/lesson/{lessonid}', 'LessonController@lessonload');
 
 Route::get('/logout','Auth\LoginController@logout');
 
+Route::get('/cab', 'Controller@cabinet')->name('cab');
+/*
 Route::get('/cab', function () {
     return view('cab');
-});
-
+})->name('cab');
+*/
 Route::get('/exam', function () {
     return view('exam');
 });
 
-Route::get('login', function() {
+Route::get('/login', function() {
     return view('auth.login');
 })->name('login');
 
-Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
 /*
 Route::get('register/{packetid}', function() {
     return view('auth.register');
@@ -78,10 +80,10 @@ Route::get('register/{packetid}', function() {
 Route::get('/packets', 'Auth\RegisterController@packets')->name('register');
 
 
-Route::get('register/{packetid}', 'Auth\RegisterController@register')->name('register');
+Route::get('/register/{packetid}', 'Auth\RegisterController@register')->name('registerfillform');
 
 
-Route::post('register', 'Auth\RegisterController@create')->name('register');
+Route::post('/register', 'Auth\RegisterController@create')->name('register');
 
 // Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');

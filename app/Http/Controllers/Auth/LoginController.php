@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Uservideos;
+use App\Packet;
 
 class LoginController extends Controller
 {
@@ -80,12 +81,15 @@ class LoginController extends Controller
                 array_push($arrayresult, array($uservideo->catid, $lessonname[0], $lessonduration[0], $percent));
             }*/
           //  return view('cab')->with([/*'arrayresult'=>$arrayresult, */ 'currentuser'=>$currentuser]);
-              return view('cab');//->with('currentuser'=>$currentuser);
+          $packets = Packet::All();
+          return view('cab')->with(['packets'=>$packets]);//->with('currentuser'=>$currentuser);
 
         }
         return redirect()->back()->with('status','Yalnış email və ya parol');
     }
 
+
+  
 
     public function logout()
     {

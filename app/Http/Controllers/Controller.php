@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
+use Illuminate\Support\Facades\Auth;
 use App\Packet;
 use App\Lesson;
 use App\Expert;
@@ -27,5 +28,12 @@ class Controller extends BaseController
         $comments = Comment::All();
         $manshets = Manshet::All();
         return view('home')->with(['packets'=>$packets, 'manshets'=>$manshets, 'comments'=>$comments, 'experts'=>$experts, 'lessonsnew'=>$lessonsnew, 'lessonspopular'=>$lessonspopular]);
+    }
+
+    public function cabinet()
+    {
+      $currentuser = Auth::user();
+      $packets = Packet::All();
+      return view('cab')->with(['packets'=>$packets]);
     }
 }

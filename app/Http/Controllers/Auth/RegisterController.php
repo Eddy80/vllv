@@ -111,8 +111,10 @@ class RegisterController extends Controller
 
 
         Auth::login($user);
-
-        return redirect('/cab');
+        $currentuser = Auth::user();
+        $packets = Packet::All();
+        return view('cab')->with(['packets'=>$packets]);
+       //  return redirect('/cab');
     }
 
 }
