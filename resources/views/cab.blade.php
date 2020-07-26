@@ -1,6 +1,8 @@
 @extends('layout')
 @section('content')
 
+
+
 @if (  (Auth::user()->payamount==0) || (Auth::user()->payexpiredate< date('Y-m-d') ) )
   @include('packets')
 @endif
@@ -20,105 +22,27 @@
 
       <div class="container">
           <div class="row">
-              <div class="col-md-8 mylessons" >
 
+              <div class="col-md-8 mylessons" >
+                <div style="padding: 0px 27px 5px;">
+                    <h5><strong>Mənim dərslərim</strong></h5>
+                </div>
                   <ul>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
+                      <?php $index=0;?>
+                      @foreach ($uservideos as $uservideo)
+                      <li class="lessonlistitem ">
+                        <a href="/lesson{{  $uservideo->lessonid }}">
+                        {{ $videonames[$index] }} - <strong>{{ $percents[$index] }}%</strong>
+
+                        @if ($percents[$index]>=100)
+                        <strong> -  Sertifikat al </strong>
+                        @endif
+
+                        <?php $index++;?>
                         </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary ">75% Tamamlandı</button>
-                        </div>
                       </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
-                      <li class=" lessonlistitem ">
-                        <a href="/lesson25">
-                        MPF - Psixoloqun verbal və inverbal ünsiyyəti
-                        </a>
-                        <div class="link">
-                          <button type="button" class="btn btn-secondary">75% Tamamlandı</button>
-                        </div>
-                      </li>
+                      @endforeach
+
                   </ul>
               </div>
               <div class="col-md-4" style="background-color: #fff;padding: 20px 20px 20px 20px;">

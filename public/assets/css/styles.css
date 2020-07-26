@@ -118,21 +118,21 @@
 }
 
 .mylessons{
-background-color: #e6e6e6;
-padding: 20px 20px 20px 0px;
+
+padding: 13px 20px 20px 0px;
 font-family: Tahoma, Helvetica, Arial, sans-serif;
 font-size: 18px;
 color: #000;
 /* line-height: 35px; */
 /* width: 66rem; */
-height: 31rem;
-margin-top: 18px;
+height: 22em;
+margin-top: 19px;
 overflow: auto;
 float: left;
 -webkit-border-radius: 7px;
 -moz-border-radius: 7px;
 border-radius: 7px;
-
+background-color: #F7F7F7;
 }
 
 .lessonlistitem{
@@ -143,6 +143,7 @@ border-radius: 7px;
   list-style-type: none;
   height: 44px;
   line-height: 40px;
+  box-shadow: 2px 2px #FF6A00;
 }
 
 
@@ -172,8 +173,17 @@ border-radius: 7px;
 
 .mylessons ul li  {
   padding: 0px 10px;
-   border-color: #FF6A00;
+  border-color: #FF6A00;
   border-style: solid;
   border-width: 1px;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
+  height: auto;
+
+  text-align: justify;
 }
+/*
+.mylessons ul li :active {
+
+  border-color: #FFFFFF;
+
+}*/

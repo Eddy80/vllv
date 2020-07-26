@@ -17,7 +17,7 @@ class CreateUservideosTable extends Migration
             $table->bigIncrements('id');
             $table->string('userid');
             $table->string('email');
-            $table->integer('catid' );
+            $table->integer('lessonid' );
             $table->integer('videoid');
             $table->timestamps();
         });

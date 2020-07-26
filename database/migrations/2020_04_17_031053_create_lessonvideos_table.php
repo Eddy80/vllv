@@ -16,6 +16,7 @@ class CreateLessonvideosTable extends Migration
         Schema::create('lessonvideos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('lessonid');
+            $table->integer('videoid');
             $table->string('name')->nullable();
             $table->string('title')->nullable();
             $table->text('text')->nullable();

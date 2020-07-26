@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,15 @@ Route::get('/lesson/{lessonid}', 'LessonController@lessonload');
 
 Route::get('/logout','Auth\LoginController@logout');
 
-Route::get('/cab', 'Controller@cabinet')->name('cab');
+
+Route::group([
+    'middleware'=>'auth'
+], function(){
+    Route::get('/cab', 'Controller@cabinet')->name('cab');
+});
+
+
+
 /*
 Route::get('/cab', function () {
     return view('cab');

@@ -11,7 +11,7 @@ use App\Lessonvideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-use App\Uservideos;
+use App\Uservideo;
 use App\Packet;
 
 class LoginController extends Controller
@@ -48,8 +48,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-      //dd($request);
-
         $this->validate($request,[
             'email'=>'required|email',
             'password'=>'required'
@@ -59,41 +57,46 @@ class LoginController extends Controller
             ->where('password',md5($request->get('password')))
             ->first();
 
-      //  dd($user);
 
         if ($user){
             Auth::login($user);
-            //return redirect('/cab');
-
-
             $currentuser = Auth::user();
-            //return dd($currentuser);
-/*
-            $uservideos = Vluservideos::where('userid', $currentuser->id)->groupby('catid')->get('catid');
 
-            $arrayresult = [];
-            foreach ($uservideos as  $uservideo){
-                $lessonname = Vlcat::where('id', $uservideo->catid)->pluck('name');
-                $lessonduration = Vlcat::where('id', $uservideo->catid)->pluck('totaldurationinseconds');
-                $countofvideosinlessons = Vlvideo::where('catid', $uservideo->catid)->count();
-                $countofuservideosbylesson = Vluservideos::where('userid', $currentuser->id)->where('catid', $uservideo->catid)->count();
-                $percent = round($countofuservideosbylesson*100/$countofvideosinlessons);
-                array_push($arrayresult, array($uservideo->catid, $lessonname[0], $lessonduration[0], $percent));
-            }*/
-          //  return view('cab')->with([/*'arrayresult'=>$arrayresult, */ 'currentuser'=>$currentuser]);
-          $packets = Packet::All();
-          return view('cab')->with(['packets'=>$packets]);//->with('currentuser'=>$currentuser);
+            $packets = Packet::All();
+            $uservideos = Uservideo::where('userid', $currentuser->id)->get();
 
+            //dd($uservideos);
+            $videonames = (array) null;
+            $percents = (array) null;
+            foreach ($uservideos as $uservideo) {
+              $v = Lessonvideo::where('lessonid', $uservideo->lessonid)->where('videoid', $uservideo->id)->get('name');
+              $lessonvideocount = Lessonvideo::where('lessonid', $uservideo->lessonid)->count();
+            //  dd($lessonvideocount);
+              $uservideocount = Uservideo::where('userid', $currentuser->id)->where('lessonid', $uservideo->lessonid)->count();
+            //  dd($uservideocount);
+              $percent = round($uservideocount* 100 / $lessonvideocount);
+              array_push($videonames, $v[0]['name'] );
+              array_push($percents, $percent );
+
+            }
+
+            // dd($videonames);
+
+            //echo var_dump($uservideos);
+        //    return redirect('cab')->with(['packets'=>$packets, 'uservideos'=>$uservideos ]);
+          return view('cab')->with(['packets'=>$packets, 'videonames'=>$videonames,'percents'=>$percents, 'uservideos'=>$uservideos]);//->with('currentuser'=>$currentuser);
         }
         return redirect()->back()->with('status','Yalnış email və ya parol');
     }
 
 
-  
+
 
     public function logout()
     {
         Auth::logout();
         return redirect('/');
     }
+
+
 }
