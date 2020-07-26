@@ -15,8 +15,8 @@ class CreateBeginnersTable extends Migration
     {
         Schema::create('beginners', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email');
-            $table->integer('catid');
+            $table->integer('userid');
+            $table->integer('lessonid');
             $table->integer('active');
             $table->timestamps();
         });

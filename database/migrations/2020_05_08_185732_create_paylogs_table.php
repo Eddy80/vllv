@@ -16,8 +16,6 @@ class CreatePaylogsTable extends Migration
         Schema::create('paylogs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('userid');
-            $table->string('firstname');
-            $table->string('lastname');
             $table->double('payamount' );
             $table->date('paydate');
             $table->string('promokodforpay');

@@ -31,7 +31,7 @@
                       <?php $index=0;?>
                       @foreach ($uservideos as $uservideo)
                       <li class="lessonlistitem ">
-                        <a href="/lesson{{  $uservideo->lessonid }}">
+                        <a href="/lesson/{{  $uservideo->lessonid }}">
                         {{ $videonames[$index] }} - <strong>{{ $percents[$index] }}%</strong>
 
                         @if ($percents[$index]>=100)
